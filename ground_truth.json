@@ -1,0 +1,164 @@
+{
+  "q01": {
+    "key_facts": [
+      "Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) * V",
+      "Scaling by sqrt(d_k) prevents dot products from growing large in magnitude",
+      "Large dot products push the softmax function into regions with extremely small gradients"
+    ],
+    "source_paper": "Attention Is All You Need",
+    "arxiv": "1706.03762v7",
+    "page": 4,
+    "section": "Section 3.2.1"
+  },
+  "q02": {
+    "key_facts": [
+      "Base model uses h = 8 parallel attention heads",
+      "d_k = d_v = d_model / h = 512 / 8 = 64",
+      "d_model = 512"
+    ],
+    "source_paper": "Attention Is All You Need",
+    "arxiv": "1706.03762v7",
+    "page": 5,
+    "section": "Section 3.2.2 & Table 3"
+  },
+  "q03": {
+    "key_facts": [
+      "Positional encodings inject information about the relative or absolute position of tokens",
+      "Because the model contains no recurrence and no convolution",
+      "Uses sine and cosine functions of different frequencies: PE(pos, 2i) = sin(pos / 10000^(2i/d_model)) and PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model))"
+    ],
+    "source_paper": "Attention Is All You Need",
+    "arxiv": "1706.03762v7",
+    "page": 6,
+    "section": "Section 3.5"
+  },
+  "q04": {
+    "key_facts": [
+      "Consists of two linear transformations with a ReLU activation in between",
+      "FFN(x) = max(0, x W_1 + b_1) W_2 + b_2",
+      "Inner-layer dimensionality d_ff = 2048, while input/output dimensionality d_model = 512"
+    ],
+    "source_paper": "Attention Is All You Need",
+    "arxiv": "1706.03762v7",
+    "page": 5,
+    "section": "Section 3.3"
+  },
+  "q05": {
+    "key_facts": [
+      "Achieved 28.4 BLEU on WMT 2014 English-to-German translation",
+      "Achieved 41.8 BLEU on WMT 2014 English-to-French translation (establishing a state-of-the-art record)"
+    ],
+    "source_paper": "Attention Is All You Need",
+    "arxiv": "1706.03762v7",
+    "page": 7,
+    "section": "Section 6.1 & Table 2"
+  },
+  "q06": {
+    "key_facts": [
+      "Moshi is a speech-text foundation model for real-time full-duplex spoken dialogue",
+      "Models both user speech and agent speech concurrently in two parallel acoustic streams",
+      "Operates with theoretical latency as low as 160ms (200ms frame rate)"
+    ],
+    "source_paper": "Moshi: A Speech-Text Foundation Model for Real-Time Dialogue",
+    "arxiv": "2410.00037v1",
+    "page": 1,
+    "section": "Section 1 & 2"
+  },
+  "q07": {
+    "key_facts": [
+      "Inner Monologue generates time-aligned text tokens alongside acoustic tokens",
+      "Text tokens are predicted slightly ahead or synchronously to guide acoustic token generation",
+      "Improves semantic coherence, linguistic structure, and reduces conversational hallucinations"
+    ],
+    "source_paper": "Moshi: A Speech-Text Foundation Model for Real-Time Dialogue",
+    "arxiv": "2410.00037v1",
+    "page": 3,
+    "section": "Section 2.2"
+  },
+  "q08": {
+    "key_facts": [
+      "Uses the Mimi neural audio codec",
+      "Operates at 12.5 Hz frame rate with multi-codebook residual vector quantization (RVQ)",
+      "Provides high-fidelity audio reconstruction at low bitrates"
+    ],
+    "source_paper": "Moshi: A Speech-Text Foundation Model for Real-Time Dialogue",
+    "arxiv": "2410.00037v1",
+    "page": 4,
+    "section": "Section 3"
+  },
+  "q09": {
+    "key_facts": [
+      "Learns to dynamically predict variable-length segment boundaries directly from sequence data",
+      "Uses a boundary predictor to output binary or soft decision signals",
+      "Aggregates intra-chunk representations into higher-level hierarchical representations"
+    ],
+    "source_paper": "Dynamic Chunking for End-to-End Hierarchical Sequence Modeling",
+    "arxiv": "2507.07955v2",
+    "page": 3,
+    "section": "Section 3"
+  },
+  "q10": {
+    "key_facts": [
+      "Fixed chunking imposes arbitrary uniform window boundaries that split semantic units",
+      "Dynamic chunking adapts segment lengths to the natural information density and structure of the input",
+      "Reduces computational complexity while preserving semantic continuity across chunk boundaries"
+    ],
+    "source_paper": "Dynamic Chunking for End-to-End Hierarchical Sequence Modeling",
+    "arxiv": "2507.07955v2",
+    "page": 2,
+    "section": "Section 1 & 2"
+  },
+  "q11": {
+    "key_facts": [
+      "Uses continuous relaxations or straight-through estimators for discrete boundary sampling",
+      "Allows gradients to flow backward through the boundary prediction network to earlier layers",
+      "Trained jointly end-to-end without requiring heuristic pre-segmentation algorithms"
+    ],
+    "source_paper": "Dynamic Chunking for End-to-End Hierarchical Sequence Modeling",
+    "arxiv": "2507.07955v2",
+    "page": 5,
+    "section": "Section 3.2"
+  },
+  "q12": {
+    "key_facts": [
+      "Attention Is All You Need addresses complexity through self-attention layers with O(n^2) complexity with respect to sequence length n",
+      "Dynamic Chunking addresses complexity by compressing input sequences hierarchically into fewer chunks, reducing downstream attention complexity to O((n/k)^2)",
+      "Both seek efficient sequence modeling: one by replacing recurrence with parallel attention, the other by adaptive sequence downsampling"
+    ],
+    "source_paper": "Vaswani et al. & Dynamic Chunking",
+    "arxiv": "1706.03762v7 & 2507.07955v2",
+    "page": 6,
+    "section": "Section 4 & Section 1"
+  },
+  "q13": {
+    "key_facts": [
+      "Vaswani uses an encoder-decoder architecture for non-streaming batch sequence-to-sequence translation",
+      "Moshi uses a decoder-only causal Transformer architecture with multi-stream parallel inputs for real-time full-duplex speech",
+      "Moshi incorporates streaming audio tokens with latency constraints, whereas Vaswani assumes the complete source sentence is available upfront"
+    ],
+    "source_paper": "Vaswani et al. & Moshi",
+    "arxiv": "1706.03762v7 & 2410.00037v1",
+    "page": 3,
+    "section": "Section 3 & Section 2"
+  },
+  "q14": {
+    "expected_action": "refuse",
+    "expected_text": "The provided research papers do not contain sufficient information to answer this question.",
+    "reason": "Geographical facts are outside the scope of the three machine learning papers."
+  },
+  "q15": {
+    "expected_action": "refuse",
+    "expected_text": "The provided research papers do not contain sufficient information to answer this question.",
+    "reason": "Financial/stock market information is outside the scope."
+  },
+  "q16": {
+    "expected_action": "refuse",
+    "expected_text": "The provided research papers do not contain sufficient information to answer this question.",
+    "reason": "GPT-4 is not among the three provided research papers."
+  },
+  "q17": {
+    "expected_action": "refuse",
+    "expected_text": "The provided research papers do not contain sufficient information to answer this question.",
+    "reason": "Medical diagnosis/treatment is outside the scope."
+  }
+}

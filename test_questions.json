@@ -1,0 +1,138 @@
+[
+  {
+    "id": "q01",
+    "question": "What is the scaled dot-product attention formula in the Transformer, and why is the scaling factor sqrt(d_k) applied?",
+    "paper": "attention_is_all_you_need",
+    "section": "Section 3.2.1",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q02",
+    "question": "How many attention heads and what key/value dimensions (d_k, d_v) are used in the base Transformer model?",
+    "paper": "attention_is_all_you_need",
+    "section": "Section 3.2.2 & Table 3",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q03",
+    "question": "Why does the Transformer require positional encodings, and what specific sinusoidal functions are chosen?",
+    "paper": "attention_is_all_you_need",
+    "section": "Section 3.5",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q04",
+    "question": "What is the structure of the Pointwise Feed-Forward Networks within each Transformer layer?",
+    "paper": "attention_is_all_you_need",
+    "section": "Section 3.3",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q05",
+    "question": "What translation BLEU scores did the Transformer achieve on WMT 2014 English-to-German and English-to-French benchmarks?",
+    "paper": "attention_is_all_you_need",
+    "section": "Section 6.1 & Table 2",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q06",
+    "question": "What is Moshi and what dual-stream audio modeling architecture does it employ for full-duplex dialogue?",
+    "paper": "moshi",
+    "section": "Section 1 & 2",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q07",
+    "question": "What is the 'Inner Monologue' mechanism in Moshi and how does it improve conversational latency and text conditioning?",
+    "paper": "moshi",
+    "section": "Section 2.2 / Inner Monologue",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q08",
+    "question": "What acoustic codec does Moshi use to quantize continuous speech into discrete tokens?",
+    "paper": "moshi",
+    "section": "Section 3 (Mimi)",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q09",
+    "question": "How does Dynamic Chunking define and predict chunk boundaries in hierarchical sequence modeling?",
+    "paper": "dynamic_chunking",
+    "section": "Section 3",
+    "expected_type": "factual",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q10",
+    "question": "What is the difference between fixed-size chunking and dynamic chunking for sequence modeling?",
+    "paper": "dynamic_chunking",
+    "section": "Section 1 & 2",
+    "expected_type": "comparative",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q11",
+    "question": "How does dynamic chunking achieve end-to-end differentiability when predicting chunk boundaries?",
+    "paper": "dynamic_chunking",
+    "section": "Section 3.2",
+    "expected_type": "technical",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q12",
+    "question": "Compare how sequence length complexity is addressed in Attention Is All You Need versus Dynamic Chunking.",
+    "paper": "cross_paper",
+    "section": "Attention Section 4 vs Dynamic Chunking Section 1",
+    "expected_type": "synthesis",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q13",
+    "question": "How does Moshi's streaming multi-stream Transformer compare with the standard encoder-decoder Transformer from Vaswani et al.?",
+    "paper": "cross_paper",
+    "section": "Vaswani Section 3 vs Moshi Section 2",
+    "expected_type": "synthesis",
+    "expected_grade": "correct"
+  },
+  {
+    "id": "q14",
+    "question": "What is the capital city of Australia and what is its population in 2026?",
+    "paper": "none",
+    "section": "Out of Scope",
+    "expected_type": "unsupported",
+    "expected_grade": "refused_correctly"
+  },
+  {
+    "id": "q15",
+    "question": "What was the stock closing price of NVIDIA on December 1, 2025?",
+    "paper": "none",
+    "section": "Out of Scope",
+    "expected_type": "unsupported",
+    "expected_grade": "refused_correctly"
+  },
+  {
+    "id": "q16",
+    "question": "How many parameters does the GPT-4 model have according to OpenAI's technical report?",
+    "paper": "none",
+    "section": "Out of Scope",
+    "expected_type": "unsupported",
+    "expected_grade": "refused_correctly"
+  },
+  {
+    "id": "q17",
+    "question": "What medical treatment is recommended for acute viral pneumonia?",
+    "paper": "none",
+    "section": "Out of Scope",
+    "expected_type": "unsupported",
+    "expected_grade": "refused_correctly"
+  }
+]
