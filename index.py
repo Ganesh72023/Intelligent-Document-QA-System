@@ -279,12 +279,14 @@ HTML_CONTENT = """<!DOCTYPE html>
 # API Endpoints
 # =====================================================================
 @app.get("/", response_class=HTMLResponse)
+@app.get("/api", response_class=HTMLResponse)
 async def home():
     """Serves the web dashboard."""
     return HTML_CONTENT
 
 
 @app.get("/health")
+@app.get("/api/health")
 async def health():
     """Vercel health check."""
     return {
@@ -295,6 +297,7 @@ async def health():
     }
 
 
+@app.post("/query")
 @app.post("/api/query")
 async def process_query(req: QueryRequest):
     """Processes an engineering question and returns cited response."""
